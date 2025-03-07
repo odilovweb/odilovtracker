@@ -54,7 +54,6 @@ postBot.on("message", (ctx) => {
 });
 
 postBot.launch();
-\
 
 const ws = new WebSocket("wss://pumpportal.fun/api/data");
 
@@ -128,7 +127,13 @@ ws.on("message", async function message(data) {
 
       console.log("keldi");
 
-      if (boolean) {
+      if (
+        boolean &&
+        !dataToken.symbol.includes("_") &&
+        !dataToken.symbol.includes("/") &&
+        !dataToken.name.includes("_") &&
+        !dataToken.name.includes("/")
+      ) {
         console.log("ketdi");
 
         bot.telegram.sendMessage(
@@ -138,8 +143,8 @@ ws.on("message", async function message(data) {
   
   ♦ CA: ${dataToken.mint} 
   
-  📝 **Name:** ${dataToken.name}  
-  💎 **Symbol:** $${dataToken.symbol}  
+  📝 **Name:** ${dataToken.name.toString()}  
+  💎 **Symbol:** $${dataToken.symbol.toString()}  
   💰 **First bought for:** ${dataToken.initialBuy.toFixed(2)} ${
             dataToken.symbol
           }
@@ -148,7 +153,7 @@ ws.on("message", async function message(data) {
   🔗 [PumpFun Page](https://pump.fun/coin/${dataToken.mint})
    
    
-  #Solana #Listing #Pumpfun #Memecoin #Sol`,
+#Solana #Listing #Pumpfun #Memecoin #Sol #btc #eth #dex #track`,
           {
             parse_mode: "Markdown",
             reply_markup: {
