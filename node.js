@@ -160,8 +160,8 @@ ws.on("message", async function message(data) {
               inline_keyboard: [
                 [
                   {
-                    text: "Solana Alerts Channels ⚠📩",
-                    url: "https://t.me/addlist/rpPhA06hv_lkMDRi",
+                    text: "100X Memecoins List 🚀🚀🚀",
+                    url: "https://t.me/+UuSMp9w-_SBkYzA6",
                   },
                 ],
               ],
